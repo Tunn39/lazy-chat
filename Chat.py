@@ -10,9 +10,6 @@
 # In[3]:
 
 
-import streamlit as st
-from openai import OpenAI
-import os
 
 # Make sure your API key is set in your environment
 # Example (Linux/Mac): export OPENAI_API_KEY="sk-proj-xxxx..."
@@ -58,6 +55,7 @@ if st.button("Rephrase"):
 
 
 # In[ ]:
+
 
 
 
