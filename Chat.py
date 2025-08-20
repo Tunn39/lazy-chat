@@ -15,7 +15,7 @@
 # Example (Linux/Mac): export OPENAI_API_KEY="sk-proj-xxxx..."
 # Example (Windows PowerShell): setx OPENAI_API_KEY "sk-proj-xxxx..."
 
-client = OpenAI()
+
 
 def rewrite_professional(message: str) -> str:
     """
@@ -55,6 +55,7 @@ if st.button("Rephrase"):
 
 
 # In[ ]:
+
 
 
 
