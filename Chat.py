@@ -3,7 +3,7 @@ from openai import OpenAI
 import os
 
 # Use API key from Streamlit Secrets
-client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
+client = OpenAI(api_key=st.secrets["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"])
 
 def rewrite_professional(message: str) -> str:
     """Rewrite message in firm, professional tone with clear boundaries."""
@@ -31,3 +31,4 @@ if st.button("Rephrase"):
         st.success(rewritten)
     else:
         st.warning("Please enter a message first.")
+
