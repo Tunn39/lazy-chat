@@ -1,28 +1,14 @@
-#!/usr/bin/env python
-# coding: utf-8
+import streamlit as st
+from openai import OpenAI
+import os
 
-# In[2]:
-
-
-
-
-
-# In[3]:
-
-
-
-# Make sure your API key is set in your environment
-# Example (Linux/Mac): export OPENAI_API_KEY="sk-proj-xxxx..."
-# Example (Windows PowerShell): setx OPENAI_API_KEY "sk-proj-xxxx..."
-
-
+# Use API key from Streamlit Secrets
+client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
 
 def rewrite_professional(message: str) -> str:
-    """
-    Rewrite message with a firm, professional tone and clear boundaries.
-    """
+    """Rewrite message in firm, professional tone with clear boundaries."""
     response = client.chat.completions.create(
-        model="gpt-4o-mini",  # or "gpt-4o", "gpt-5" if available
+        model="gpt-4o-mini",
         messages=[
             {"role": "system", "content": "Rewrite text in a firm, professional tone with clear boundaries."},
             {"role": "user", "content": message}
@@ -31,10 +17,8 @@ def rewrite_professional(message: str) -> str:
     )
     return response.choices[0].message.content.strip()
 
-
-# --- Streamlit App UI ---
+# --- Streamlit UI ---
 st.set_page_config(page_title="Professional Rewriter", page_icon="💼")
-
 st.title("💼 Professional Message Rewriter")
 st.write("Type your message below and get a firm, professional rewrite with clear boundaries.")
 
@@ -47,19 +31,3 @@ if st.button("Rephrase"):
         st.success(rewritten)
     else:
         st.warning("Please enter a message first.")
-
-
-# In[4]:
-
-
-
-
-# In[ ]:
-
-
-
-
-
-
-
-
