@@ -55,10 +55,10 @@ if st.button("Rephrase"):
 # In[4]:
 
 
-jupyter nbconvert --to script ProfessionalRewriter.ipynb
 
 
 # In[ ]:
+
 
 
 
