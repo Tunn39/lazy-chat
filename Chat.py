@@ -4,7 +4,7 @@
 # In[2]:
 
 
-pip install streamlit openai
+
 
 
 # In[3]:
@@ -59,6 +59,7 @@ jupyter nbconvert --to script ProfessionalRewriter.ipynb
 
 
 # In[ ]:
+
 
 
 
